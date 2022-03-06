@@ -1,4 +1,5 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://eddieliu58.github.io/hugo-website/'
 languageCode = 'en-us'
 title = 'Eddie Blog'
 theme = 'ananke'
+canonifyurls = true 
