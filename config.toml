@@ -4,36 +4,36 @@ metaDataFormat = "yaml"
 title = "Eddie Blog"
 theme = "blist"
 
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "ch"
 DefaultContentLanguageInSubdir = true
 [languages]
-  [languages.en]
-    contentDir = "content/en" #English
+  [languages.ch]
+    contentDir = "content/ch" #Chinese
     weight = 1
-    languageName = "English"
-    [languages.en.params]
+    languageName = "Chinese"
+    [languages.ch.params]
       introTitle = "Eddie的前端之旅"
       introSubtitle = "記錄所學的技術文章,期盼內容也能帶給你幫助"
       introPhoto = "/eddie_homepage.jpeg"
       logo = "/logo.png"
-    [[languages.en.menu.main]]
+    [[languages.ch.menu.main]]
         name = "Blog"
         url = "blog"
         weight = 1
 
-    [[languages.en.menu.main]]
+    [[languages.ch.menu.main]]
         name = "About"
         url = "page/about/"
         weight = 2
 
-    [[languages.en.menu.main]]
+    [[languages.ch.menu.main]]
         name = "Tags"
         url = "tags"
         weight = 3
 
-    [[languages.en.menu.main]]
+    [[languages.ch.menu.main]]
         name = "Top Post"
-        url = "/en/blog/emoji-support/"
+        url = "/ch/blog/emoji-support/"
         weight = 4
 
 [params]
