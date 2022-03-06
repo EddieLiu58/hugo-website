@@ -1,6 +1,6 @@
 ---
-author: Katheryn Fox
-title: Home of Katheryn Fox
-date: 2021-07-15
+author: Eddie Liu
+title: Home of Eddie Liu
+date: 2022-03-06
 ---
 
