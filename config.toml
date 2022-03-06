@@ -17,24 +17,19 @@ DefaultContentLanguageInSubdir = true
       introPhoto = "/eddie_homepage.jpeg"
       logo = "/logo.png"
     [[languages.ch.menu.main]]
-        name = "Blog"
+        name = "部落格"
         url = "blog"
         weight = 1
 
     [[languages.ch.menu.main]]
-        name = "About"
+        name = "關於我"
         url = "page/about/"
         weight = 2
 
     [[languages.ch.menu.main]]
-        name = "Tags"
+        name = "標籤"
         url = "tags"
         weight = 3
-
-    [[languages.ch.menu.main]]
-        name = "Top Post"
-        url = "/ch/blog/emoji-support/"
-        weight = 4
 
 [params]
   # Enable the darkmode toggle in header
@@ -45,7 +40,7 @@ DefaultContentLanguageInSubdir = true
 
   # Custom copyright - optional
   copyright = "Copyright © 2022 - Eddie Liu · All rights reserved"
-  favicon = "/favicon.svg"
+  favicon = "/logo.png"
 
   # Color for the intro details and social links block, not applicable for dark mode
   # Supported values: Any color from TailwindCSS default colors
@@ -57,15 +52,10 @@ DefaultContentLanguageInSubdir = true
 
 [params.homepage.social]
   # Global params xommon for both languages
-  title = "Follow me"
-  description = "I work on everything coding and tweet developer memes"
-  twitter = "https://twitter.com/"
-  linkedin = "https://linkedin.com/in/"
-  xing = "https://www.xing.com/profile/"
-  github = "https://github.com/"
-  medium = "https://medium.com/"
-  reddit = "https://reddit.com/"
-  dribbble = "https://dribbble.com/"
+  title = "關注我"
+  description = "如有任何問題,可從右方連結聯絡我或觀看其他資訊"
+  linkedin = "https://tw.linkedin.com/in/%E5%BD%A5%E5%BB%B7-%E5%8A%89-04a1841aa?trk=people-guest_people_search-card"
+  github = "https://github.com/EddieLiu58"
 
 [[menu.main]]
   name = "About"

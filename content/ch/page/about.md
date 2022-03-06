@@ -1,26 +1,16 @@
 ---
-author: Katheryn Fox
-title: About Me
-date: 2021-07-15
+author: Eddie Liu
+title: 關於我
+date: 2022-03-06
 description:
 keywords: ["about-us", "about-hugo", "contact"]
 type: about
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
-
-Hugo makes use of a variety of open source projects including:
-
-- https://github.com/yuin/goldmark
-- https://github.com/alecthomas/chroma
-- https://github.com/muesli/smartcrop
-- https://github.com/spf13/cobra
-- https://github.com/spf13/viper
-
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+基隆人，大三時由於接觸到攝影並愛上攝影，且當時剛好物聯網開始熱烈討論，並決定到花蓮東華一邊攻讀電機碩士一邊玩攝影。碩士論文需要實做物聯網系統，因此也接觸到網頁，在當時就產生了興趣，後續並決定以此興趣透入職場，剛好攝影也培養自己的美感，與前端工程師所需的美感剛好有加分作用。
+## 經歷簡述
+### 前端工程師 (2019/04 ~ 在職)
+  畢業後第一份工作，在當前端工程師。第一年主要工作內容是負責網站前端功能開發，包括CSS切版、jQuery使用，並慢慢學習Drupal 8 twig template 以及後端。
+  第一年也經歷了基礎的前端開發，並要求自己開發樣式與設計圖不能有過多差異，同時學習與設計跟PM溝通，理解客戶需求並解決問題。
+  第二年公司接到TSMC要轉用CMS系統開發官網，因此與TSMC IT部門每周固定開會，最終完成了TSMC三個網站的重製，也如期上線到現在持續協助維護中。
+  目前帶過兩個小專案及一個中型專案，也了解專案流程中要如何分配任務給團隊並動態調整，盡可能讓專案如期上線。
