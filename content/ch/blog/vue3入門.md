@@ -7,11 +7,10 @@ tags: ["vue"]
 thumbnail: /vue.png
 ---
 
-本篇文章文章將依序研究vue3從環境一路到component實際應用
+本篇文章文章將依序研究 vue3 從環境一路到 component 實際應用
 
-## Build Vue
+## [Composition API](/blog/vue-composition-api/)
 
 ## Vue component
 
 ## Props & emit
-
