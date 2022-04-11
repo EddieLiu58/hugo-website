@@ -31,6 +31,75 @@ vue2 總共有 8 個 hook,網上有非常多講解 LifeCycle 的文章,這裡就
 
 首先要定義 setup 函式，這個函式包含 data、methods、computed、lifecycle 等方法。
 
+```
+<script>
+  import json from "../demo.json";
+  import card from "./components/v-card/misc-media-width-text.vue";
+  import {
+    ref,
+    reactive,
+    onBeforeMount,
+    onMounted,
+    onBeforeUpdate,
+    onUpdated,
+    computed,
+  } from "vue";
+  export default {
+    name: "App",
+
+    components: {
+      card,
+    },
+    setup() {
+      const ApiData = reactive([]);
+      const uri = ref("");
+      const computedFun = computed(() => {
+        return ApiData[0].length;
+      });
+
+      onBeforeMount(() => {
+        // DOM 渲染前
+        console.log("DOM 渲染前");
+      });
+
+      onMounted(() => {
+        // DOM 渲染完成後
+        if (process.env.VUE_APP_ENV === "dev") {
+          uri.value = process.env.VUE_APP_API_ENDPOINT_DEV;
+          this.axios
+            .get(`${uri.value}`)
+            .then((response) => {
+              ApiData.push(response.data.attractions);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        } else {
+          ApiData.push(json.attractions);
+        }
+      });
+
+      onBeforeUpdate(() => {
+        // 在資料更改導致virtual DOM重新渲染前調用
+        console.log("資料更改前");
+      });
+
+      onUpdated(() => {
+        // 在資料更改導致virtual DOM重新渲染後調用
+        console.log("資料更改後");
+      });
+
+      return {
+        ApiData,
+        uri,
+        computedFun,
+      };
+    },
+    methods: {},
+  };
+</script>
+```
+
 ## 參考資料
 
 1. [Vue.js - Lifecycle Hooks](https://vuejs.org/guide/essentials/lifecycle.html)

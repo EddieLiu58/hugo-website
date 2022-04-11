@@ -6,6 +6,7 @@
       "body",
       "button",
       "circle",
+      "code",
       "defs",
       "div",
       "footer",
@@ -24,9 +25,11 @@
       "link",
       "main",
       "meta",
+      "ol",
       "p",
       "path",
       "polyline",
+      "pre",
       "rect",
       "script",
       "section",
@@ -178,7 +181,11 @@
       "composition-apiblogvue-composition-api",
       "props--emit",
       "vue-component",
+      "vue2-lifecycle",
+      "vue3-lifecycle",
       "前端工程師-201904--在職",
+      "參考資料",
+      "定義-setup-函式",
       "經歷簡述"
     ]
   }
