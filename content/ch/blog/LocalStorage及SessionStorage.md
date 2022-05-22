@@ -40,7 +40,7 @@ sessionStorage.removeItem("key");
 sessionStorage.clear();
 ```
 
-`key`為任意字串，可自行定義，`value`的部分則只能是`string`，所以如果要儲存物件或陣列的話可以使用 JSON。
+**key** 為任意字串，可自行定義，**value** 的部分則只能是 **string**，所以如果要儲存物件或陣列的話可以使用 JSON。
 
 ## LocalStorage
 
@@ -65,7 +65,7 @@ localStorage.removeItem("key");
 localStorage.clear();
 ```
 
-`key`與`value`的規則跟 SessionStorage 一樣。
+**key** 與 **value** 的規則跟 SessionStorage 一樣。
 
 ## 兩者的資訊安全
 
