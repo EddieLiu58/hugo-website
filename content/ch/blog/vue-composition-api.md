@@ -31,7 +31,7 @@ vue2 總共有 8 個 hook,網上有非常多講解 LifeCycle 的文章,這裡就
 
 首先要定義 setup 函式，這個函式包含 data、methods、computed、lifecycle 等方法。
 
-```
+```js
 <script>
   import json from "../demo.json";
   import card from "./components/v-card/misc-media-width-text.vue";

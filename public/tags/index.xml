@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Eddie Blog</title>
+    <link>https://eddieliu58.github.io/hugo-website/tags/</link>
+    <description>Recent content in Tags on Eddie Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieliu58.github.io/hugo-website/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LocalStorage</title>
+      <link>https://eddieliu58.github.io/hugo-website/tags/localstorage/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieliu58.github.io/hugo-website/tags/localstorage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SessionStorage</title>
+      <link>https://eddieliu58.github.io/hugo-website/tags/sessionstorage/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieliu58.github.io/hugo-website/tags/sessionstorage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Composition API</title>
+      <link>https://eddieliu58.github.io/hugo-website/tags/composition-api/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieliu58.github.io/hugo-website/tags/composition-api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue</title>
+      <link>https://eddieliu58.github.io/hugo-website/tags/vue/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieliu58.github.io/hugo-website/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

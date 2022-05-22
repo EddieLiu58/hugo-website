@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Eddie Blog</title>
+    <link>https://eddieliu58.github.io/hugo-website/page/</link>
+    <description>Recent content in Pages on Eddie Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieliu58.github.io/hugo-website/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>關於我</title>
+      <link>https://eddieliu58.github.io/hugo-website/page/about/</link>
+      <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieliu58.github.io/hugo-website/page/about/</guid>
+      <description>基隆人，大三時由於接觸到攝影並愛上攝影，且當時剛好物聯網開始熱烈討論，並決定到花蓮東華一邊攻讀電機碩士一邊玩攝影。碩士論文需要實做物聯網系統，因此也接觸到網頁，在當時就產生了興趣，後續並決定以此興趣透入職場，剛好攝影也培養自己的美感，與前端工程師所需的美感剛好有加分作用。
+經歷簡述 前端工程師 (2019/04 ~ 在職) 畢業後第一份工作，在當前端工程師。第一年主要工作內容是負責網站前端功能開發，包括CSS切版、jQuery使用，並慢慢學習Drupal 8 twig template 以及後端。 第一年也經歷了基礎的前端開發，並要求自己開發樣式與設計圖不能有過多差異，同時學習與設計跟PM溝通，理解客戶需求並解決問題。 第二年公司接到TSMC要轉用CMS系統開發官網，因此與TSMC IT部門每周固定開會，最終完成了TSMC三個網站的重製，也如期上線到現在持續協助維護中。 目前帶過兩個小專案及一個中型專案，也了解專案流程中要如何分配任務給團隊並動態調整，盡可能讓專案如期上線。</description>
+    </item>
+    
+  </channel>
+</rss>
