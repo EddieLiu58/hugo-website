@@ -49,7 +49,7 @@ DefaultContentLanguageInSubdir = true
 
   # The page bundle that is shown on the front page
   frontBundle = "blog"
-  css =["css/custom.scss"]
+  css =["css/custom.css"]
 [params.homepage.social]
   # Global params xommon for both languages
   title = "關注我"
