@@ -49,73 +49,73 @@ April 11, 2022
 由於工作上還是使用 vue2，因此本篇會順便介紹 vue2 與 vue3 這部分的差異性。</p><h2 id=vue2-lifecycle>vue2 LifeCycle</h2><p>vue2 總共有 8 個 hook,網上有非常多講解 LifeCycle 的文章,這裡就不再貼測試每個 hook 的程式碼，直接快速帶過。
 正常情況下會經歷四個 hook(beforeCreate、created、beforeMount 及 mounted),分別是以下的狀況:</p><ol>
 <li>beforeCreate：el 和 data 並未初始化,還是 undefind 的狀態</li><li>created:此時完成了 data 的初始化，el 還沒有建立</li><li>beforeMount：完成了 el 和 data 的初始化</li><li>mounted:el 掛載完成</li></ol><p>若 data 有被更新,則會觸發 beforeUpdate 與 updated。
-最後 beforeDestroy 及 destroyed 作者比較少用，但若有 el 需要此功能，可使用<code>destroy()</code>,此 el 被銷毀後這時 el 中的任何定義( data 、 methods&mldr;等)都已被解除綁定，代表在此做的任何操作都會失效，而整個 LifeCycle 最後能對 el 做事情的 hook 就是 beforeDestroy。</p><h2 id=vue3-lifecycle>vue3 LifeCycle</h2><p>進入到 vue3 後,LifeCycle hook function 的寫法有所改變，下面就直接來看一下新做法吧。</p><h3 id=定義-setup-函式>定義 setup 函式</h3><p>首先要定義 setup 函式，這個函式包含 data、methods、computed、lifecycle 等方法。</p><pre tabindex=0><code>&lt;script&gt;
-  import json from &#34;../demo.json&#34;;
-  import card from &#34;./components/v-card/misc-media-width-text.vue&#34;;
-  import {
-    ref,
-    reactive,
-    onBeforeMount,
-    onMounted,
-    onBeforeUpdate,
-    onUpdated,
-    computed,
-  } from &#34;vue&#34;;
-  export default {
-    name: &#34;App&#34;,
-
-    components: {
-      card,
-    },
-    setup() {
-      const ApiData = reactive([]);
-      const uri = ref(&#34;&#34;);
-      const computedFun = computed(() =&gt; {
-        return ApiData[0].length;
-      });
-
-      onBeforeMount(() =&gt; {
-        // DOM 渲染前
-        console.log(&#34;DOM 渲染前&#34;);
-      });
-
-      onMounted(() =&gt; {
-        // DOM 渲染完成後
-        if (process.env.VUE_APP_ENV === &#34;dev&#34;) {
-          uri.value = process.env.VUE_APP_API_ENDPOINT_DEV;
-          this.axios
-            .get(`${uri.value}`)
-            .then((response) =&gt; {
-              ApiData.push(response.data.attractions);
-            })
-            .catch((error) =&gt; {
-              console.log(error);
-            });
-        } else {
-          ApiData.push(json.attractions);
-        }
-      });
-
-      onBeforeUpdate(() =&gt; {
-        // 在資料更改導致virtual DOM重新渲染前調用
-        console.log(&#34;資料更改前&#34;);
-      });
-
-      onUpdated(() =&gt; {
-        // 在資料更改導致virtual DOM重新渲染後調用
-        console.log(&#34;資料更改後&#34;);
-      });
-
-      return {
-        ApiData,
-        uri,
-        computedFun,
-      };
-    },
-    methods: {},
-  };
-&lt;/script&gt;
-</code></pre><h2 id=參考資料>參考資料</h2><ol>
+最後 beforeDestroy 及 destroyed 作者比較少用，但若有 el 需要此功能，可使用<code>destroy()</code>,此 el 被銷毀後這時 el 中的任何定義( data 、 methods&mldr;等)都已被解除綁定，代表在此做的任何操作都會失效，而整個 LifeCycle 最後能對 el 做事情的 hook 就是 beforeDestroy。</p><h2 id=vue3-lifecycle>vue3 LifeCycle</h2><p>進入到 vue3 後,LifeCycle hook function 的寫法有所改變，下面就直接來看一下新做法吧。</p><h3 id=定義-setup-函式>定義 setup 函式</h3><p>首先要定義 setup 函式，這個函式包含 data、methods、computed、lifecycle 等方法。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#ff79c6>&lt;</span>script<span style=color:#ff79c6>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>import</span> json from <span style=color:#f1fa8c>&#34;../demo.json&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>import</span> card from <span style=color:#f1fa8c>&#34;./components/v-card/misc-media-width-text.vue&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>import</span> {
+</span></span><span style=display:flex><span>    ref,
+</span></span><span style=display:flex><span>    reactive,
+</span></span><span style=display:flex><span>    onBeforeMount,
+</span></span><span style=display:flex><span>    onMounted,
+</span></span><span style=display:flex><span>    onBeforeUpdate,
+</span></span><span style=display:flex><span>    onUpdated,
+</span></span><span style=display:flex><span>    computed,
+</span></span><span style=display:flex><span>  } from <span style=color:#f1fa8c>&#34;vue&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>export</span> <span style=color:#ff79c6>default</span> {
+</span></span><span style=display:flex><span>    name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;App&#34;</span>,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    components<span style=color:#ff79c6>:</span> {
+</span></span><span style=display:flex><span>      card,
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    setup() {
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>const</span> ApiData <span style=color:#ff79c6>=</span> reactive([]);
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>const</span> uri <span style=color:#ff79c6>=</span> ref(<span style=color:#f1fa8c>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>const</span> computedFun <span style=color:#ff79c6>=</span> computed(() =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>return</span> ApiData[<span style=color:#bd93f9>0</span>].length;
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      onBeforeMount(() =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#6272a4>// DOM 渲染前
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>        console.log(<span style=color:#f1fa8c>&#34;DOM 渲染前&#34;</span>);
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      onMounted(() =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#6272a4>// DOM 渲染完成後
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>        <span style=color:#ff79c6>if</span> (process.env.VUE_APP_ENV <span style=color:#ff79c6>===</span> <span style=color:#f1fa8c>&#34;dev&#34;</span>) {
+</span></span><span style=display:flex><span>          uri.value <span style=color:#ff79c6>=</span> process.env.VUE_APP_API_ENDPOINT_DEV;
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>this</span>.axios
+</span></span><span style=display:flex><span>            .get(<span style=color:#f1fa8c>`</span><span style=color:#f1fa8c>${</span>uri.value<span style=color:#f1fa8c>}</span><span style=color:#f1fa8c>`</span>)
+</span></span><span style=display:flex><span>            .then((response) =&gt; {
+</span></span><span style=display:flex><span>              ApiData.push(response.data.attractions);
+</span></span><span style=display:flex><span>            })
+</span></span><span style=display:flex><span>            .<span style=color:#ff79c6>catch</span>((error) =&gt; {
+</span></span><span style=display:flex><span>              console.log(error);
+</span></span><span style=display:flex><span>            });
+</span></span><span style=display:flex><span>        } <span style=color:#ff79c6>else</span> {
+</span></span><span style=display:flex><span>          ApiData.push(json.attractions);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      onBeforeUpdate(() =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#6272a4>// 在資料更改導致virtual DOM重新渲染前調用
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>        console.log(<span style=color:#f1fa8c>&#34;資料更改前&#34;</span>);
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      onUpdated(() =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#6272a4>// 在資料更改導致virtual DOM重新渲染後調用
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>        console.log(<span style=color:#f1fa8c>&#34;資料更改後&#34;</span>);
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>return</span> {
+</span></span><span style=display:flex><span>        ApiData,
+</span></span><span style=display:flex><span>        uri,
+</span></span><span style=display:flex><span>        computedFun,
+</span></span><span style=display:flex><span>      };
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    methods<span style=color:#ff79c6>:</span> {},
+</span></span><span style=display:flex><span>  };
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&lt;</span>/script&gt;
+</span></span></code></pre></div><h2 id=參考資料>參考資料</h2><ol>
 <li><a href=https://vuejs.org/guide/essentials/lifecycle.html>Vue.js - Lifecycle Hooks</a></li><li><a href=https://ithelp.ithome.com.tw/articles/10202949>Vue.js Core 30 天屠龍記(第 4 天): Vue 實體的生命週期</a></li><li><a href=https://ithelp.ithome.com.tw/articles/10259305>重構倒數第 29 天 - Vue2 Option API 轉換 Vue3 Composition API</a></li></ol></article><div class="bg-blue-100 dark:bg-gray-900">
 <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 <div>
