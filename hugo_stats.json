@@ -51,6 +51,7 @@
       "close-search",
       "container",
       "cursor-pointer",
+      "custom-article-wrapper",
       "dark:bg-gray-800",
       "dark:bg-gray-900",
       "dark:border-transparent",
