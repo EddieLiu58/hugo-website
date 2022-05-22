@@ -67,7 +67,7 @@ localStorage.clear();
 
 **key** 與 **value** 的規則跟 SessionStorage 一樣。
 
-## 兩者的資訊安全
+## 資訊安全
 
 不論資料放在 sessionStorage 還是 localStorage，都被限制在該網站的規範內，其他網站無法存取。
 
