@@ -35,17 +35,14 @@ LocalStorage及SessionStorage - Eddie Blog
 <span class="toggle-dark-mode inline-block cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="5" x2="12" y2="5.01"/><line x1="17" y1="7" x2="17" y2="7.01"/><line x1="19" y1="12" x2="19" y2="12.01"/><line x1="17" y1="17" x2="17" y2="17.01"/><line x1="12" y1="19" x2="12" y2="19.01"/><line x1="7" y1="17" x2="7" y2="17.01"/><line x1="5" y1="12" x2="5" y2="12.01"/><line x1="7" y1="7" x2="7" y2="7.01"/></svg>
 </span>
 </li></ul></header><main class=flex-1>
-<div class="relative max-w-5xl mx-auto px-4">
-<img src=https://eddieliu58.github.io/hugo-website/pexels.jpg class="rounded-lg shadow-sm w-full object-contain">
-<div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
-May 22, 2022
-</div></div><article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+<article class="max-w-7xl lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 <h1 class="text-2xl font-bold mb-2">LocalStorage及SessionStorage</h1><h5 class="text-sm flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/><rect x="8" y="15" width="2" height="2"/></svg>
 &nbsp;&bull;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 1&nbsp;
 &nbsp;&bull;<svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 019 0 9 9 0 019 0"/><path d="M3 6a9 9 0 019 0 9 9 0 019 0"/><line x1="3" y1="6" x2="3" y2="19"/><line x1="12" y1="6" x2="12" y2="19"/><line x1="21" y1="6" x2="21" y2="19"/></svg>
 79&nbsp;
-</h5><h2 id=基本概念>基本概念</h2><p>有些時候使用者在網站上操作時，我們可能會需要儲存一些資料，這類資料不需要寫入資料庫，這時就可以進入本次文章的主題:
+</h5>May 22, 2022
+<h2 id=基本概念>基本概念</h2><p>有些時候使用者在網站上操作時，我們可能會需要儲存一些資料，這類資料不需要寫入資料庫，這時就可以進入本次文章的主題:
 LocalStorage 及 SessionStorage。</p><p><img src=https://eddieliu58.github.io/hugo-website/storage-application.png alt></p><p>這兩個地方等於是我們將上述資料儲存在用戶端，而非寫入資料庫。使用場景可能會在紀錄當前使用者的購物車行為、列表頁的篩選項目等項目，比較屬於是操作後產生的行為數據，就能儲存在用戶端上，並且根據其特性或需求來操作這些數據。</p><h2 id=sessionstorage>SessionStorage</h2><p>以下為 SessionStorage 的特性:</p><ol>
 <li>儲存的資料只能在當前頁面使用</li><li>關閉或切換該頁面(Browser Sessions)，則該資料會自動刪除</li></ol><p>所以符合上述特性的資料都能儲存在 SessionStorage，那我們來看看資料要如何儲存在 SessionStorage 吧。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#6272a4>// 將資料存到sessionStorage
 </span></span></span><span style=display:flex><span><span style=color:#6272a4></span>sessionStorage.setItem(<span style=color:#f1fa8c>&#34;key&#34;</span>, <span style=color:#f1fa8c>&#34;value&#34;</span>);
