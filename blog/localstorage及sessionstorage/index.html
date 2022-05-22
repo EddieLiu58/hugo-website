@@ -20,7 +20,7 @@ LocalStorage及SessionStorage - Eddie Blog
 <meta itemprop=name content="LocalStorage及SessionStorage">
 <meta itemprop=description content="有些時候使用者在網站上操作時，我們可能會需要儲存一些資料，這類資料不需要寫入資料庫，這時就可以進入本次文章的主題: LocalStorage及SessionStorage。"><meta itemprop=datePublished content="2022-05-22T00:00:00+00:00">
 <meta itemprop=dateModified content="2022-05-22T00:00:00+00:00">
-<meta itemprop=wordCount content="79">
+<meta itemprop=wordCount content="85">
 <meta itemprop=keywords content="LocalStorage,SessionStorage,">
 </head><body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
 <a href=https://eddieliu58.github.io/hugo-website/ class="capitalize font-extrabold text-2xl">
@@ -41,7 +41,7 @@ LocalStorage及SessionStorage - Eddie Blog
 &nbsp;&bull;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 1&nbsp;
 &nbsp;&bull;<svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 019 0 9 9 0 019 0"/><path d="M3 6a9 9 0 019 0 9 9 0 019 0"/><line x1="3" y1="6" x2="3" y2="19"/><line x1="12" y1="6" x2="12" y2="19"/><line x1="21" y1="6" x2="21" y2="19"/></svg>
-79&nbsp;
+85&nbsp;
 </h5>May 22, 2022
 <h2 id=基本概念>基本概念</h2><p>有些時候使用者在網站上操作時，我們可能會需要儲存一些資料，這類資料不需要寫入資料庫，這時就可以進入本次文章的主題:
 LocalStorage 及 SessionStorage。</p><p><img src=https://eddieliu58.github.io/hugo-website/storage-application.png alt></p><p>這兩個地方等於是我們將上述資料儲存在用戶端，而非寫入資料庫。使用場景可能會在紀錄當前使用者的購物車行為、列表頁的篩選項目等項目，比較屬於是操作後產生的行為數據，就能儲存在用戶端上，並且根據其特性或需求來操作這些數據。</p><h2 id=sessionstorage>SessionStorage</h2><p>以下為 SessionStorage 的特性:</p><ol>
@@ -56,7 +56,7 @@ LocalStorage 及 SessionStorage。</p><p><img src=https://eddieliu58.github.io/h
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#6272a4>// 從sessionStorage移除之前存的所有資料
 </span></span></span><span style=display:flex><span><span style=color:#6272a4></span>sessionStorage.clear();
-</span></span></code></pre></div><p><code>key</code>為任意字串，可自行定義，<code>value</code>的部分則只能是<code>string</code>，所以如果要儲存物件或陣列的話可以使用 JSON。</p><h2 id=localstorage>LocalStorage</h2><p>以下為 LocalStorage 的特性:</p><ol>
+</span></span></code></pre></div><p><strong>key</strong> 為任意字串，可自行定義，<strong>value</strong> 的部分則只能是 <strong>string</strong>，所以如果要儲存物件或陣列的話可以使用 JSON。</p><h2 id=localstorage>LocalStorage</h2><p>以下為 LocalStorage 的特性:</p><ol>
 <li>儲存的資料可以在當前網站所有頁面使用</li><li>關閉或切換該頁面(Browser Sessions)，則該資料依舊存在，除非手動去刪除</li></ol><p>與 SessionStorage 最大的差異在於資料會永久儲存及跨頁面(Browser Sessions)使用，所以有上述需求的就必須要使用 LocalStorage。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#6272a4>// 將資料存到localStorage
 </span></span></span><span style=display:flex><span><span style=color:#6272a4></span>localStorage.setItem(<span style=color:#f1fa8c>&#34;key&#34;</span>, value);
 </span></span><span style=display:flex><span>
@@ -68,7 +68,7 @@ LocalStorage 及 SessionStorage。</p><p><img src=https://eddieliu58.github.io/h
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#6272a4>// 從localStorage移除之前存的所有資料
 </span></span></span><span style=display:flex><span><span style=color:#6272a4></span>localStorage.clear();
-</span></span></code></pre></div><p><code>key</code>與<code>value</code>的規則跟 SessionStorage 一樣。</p><h2 id=兩者的資訊安全>兩者的資訊安全</h2><p>不論資料放在 sessionStorage 還是 localStorage，都被限制在該網站的規範內，其他網站無法存取。</p><h2 id=結論>結論</h2><p>在了解特性與資安後妥善利用 sessionStorage 及 localStorage，其實在前端的互動上會有不錯幫助。</p><h2 id=參考資料>參考資料:</h2><p><a href=https://developer.mozilla.org/zh-TW/docs/Web/API/Window/sessionStorage>sessionStorage</a></p><p><a href=https://developer.mozilla.org/zh-TW/docs/Web/API/Window/localStorage>LocalStorage</a></p></article><div class="bg-blue-100 dark:bg-gray-900">
+</span></span></code></pre></div><p><strong>key</strong> 與 <strong>value</strong> 的規則跟 SessionStorage 一樣。</p><h2 id=兩者的資訊安全>兩者的資訊安全</h2><p>不論資料放在 sessionStorage 還是 localStorage，都被限制在該網站的規範內，其他網站無法存取。</p><h2 id=結論>結論</h2><p>在了解特性與資安後妥善利用 sessionStorage 及 localStorage，其實在前端的互動上會有不錯幫助。</p><h2 id=參考資料>參考資料:</h2><p><a href=https://developer.mozilla.org/zh-TW/docs/Web/API/Window/sessionStorage>sessionStorage</a></p><p><a href=https://developer.mozilla.org/zh-TW/docs/Web/API/Window/localStorage>LocalStorage</a></p></article><div class="bg-blue-100 dark:bg-gray-900">
 <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 <div>
 <div class="text-2xl font-bold mb-2">關注我</div><p class=opacity-60>如有任何問題,可從右方連結聯絡我或觀看其他資訊</p></div><ul class="flex justify-center gap-4">
